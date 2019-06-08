@@ -14,7 +14,7 @@ app.use(function(req, res, next) {
     next();
   });
 // Connection URL
-const url = 'mongodb+srv://sistereis:sistereis@cluster0-ea9b5.mongodb.net/test?retryWrites=true&w=majority';
+const url = 'mongodb+srv://sistereis:sistereis@cluster0-ea9b5.mongodb.net/sistereis?retryWrites=true&w=majority';
 // Database Name
 const parser = { useNewUrlParser: true };
 mongoose.connect(url,parser)

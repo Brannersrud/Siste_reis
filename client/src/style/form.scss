@@ -1,3 +1,5 @@
+@import "~bulma/sass/utilities/initial-variables";
+
 form{
     display:flex;
     flex-direction: column;
@@ -6,3 +8,15 @@ form{
 .drop-wrapper{
     border: 1px solid black;
 }
+
+
+    //Loginform
+.hero.is-primary {
+    background-color: white !important;
+}
+
+
+
+
+
+@import "~bulma";
