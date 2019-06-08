@@ -16,7 +16,7 @@ class Loginform extends Component {
             <div>
             <div class="field">
             <div class="control">
-                <input class="input" type="text" placeholder="Normal input" />
+                <input class="input is-medium" type="text" placeholder="Normal input" />
             </div>
             </div>
             </div>
@@ -24,3 +24,5 @@ class Loginform extends Component {
         )
     }
 }
+
+export default Loginform;

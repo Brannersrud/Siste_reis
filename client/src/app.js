@@ -1,9 +1,13 @@
-import React,{Component} from 'react';
+import React from 'react';
+import Loginform from './components/Loginform';
 
 
 const App = () => {
     return(
-        <p>app.js</p>
+        <div>
+            <p>App.js</p>
+            <Loginform /> 
+        </div>
     )
 }
 
