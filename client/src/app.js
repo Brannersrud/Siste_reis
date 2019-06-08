@@ -1,9 +1,13 @@
 import React,{Component} from 'react';
+import Uploadform from './components/uploadform';
+import Style from '../src/App.scss';
 
 
 const App = () => {
     return(
-        <p>app.js</p>
+        <div>
+            <Uploadform/>
+        </div>
     )
 }
 
