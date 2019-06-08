@@ -3,14 +3,14 @@ import FrontPage from './components/frontpage';
 import Loginform from './components/Loginform';
 import Style from '../src/App.scss';
 import AppRouter from '../src/router';
+//import 'bulma/css/bulma.css';
 
 
 const App = () => {
     return(
-        <AppRouter>
+        <div>
             <Loginform/>
-        </AppRouter>
-      
+        </div>
     )
 }
 
