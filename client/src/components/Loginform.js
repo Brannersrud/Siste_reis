@@ -12,34 +12,35 @@ class Loginform extends Component {
     }
 
     render(){
+        console.log(this.state);
         return(
             <div>
-            <section class="hero is-primary is-fullheight" id="loginform">
-  <div class="hero-body">
-    <div class="container">
-      <div class="columns is-centered">
-        <div class="column is-5-tablet is-4-desktop is-3-widescreen">
-          <form action="" class="box">
-            <div class="field">
-              <label for="" class="label">Email</label>
-              <div class="control has-icons-left">
-                <input type="email" placeholder="e.g. bobsmith@gmail.com" class="input" required />
-                <span class="icon is-small is-left">
-                  <i class="fa fa-envelope"></i>
+            <section className="hero is-primary is-fullheight" id="loginform">
+  <div className="hero-body">
+    <div className="container">
+      <div className="columns is-centered">
+        <div className="column is-5-tablet is-4-desktop is-3-widescreen">
+          <form action="" className="box">
+            <div className="field">
+              <label className="label">Username</label>
+              <div className="control has-icons-left">
+                <input onChange={(e) => this.setState({username:e.target.value})} type="username" placeholder="Username" className="input" required />
+                <span className="icon is-small is-left">
+                  <i className="fa fa-envelope"></i>
                 </span>
               </div>
             </div>
-            <div class="field">
-              <label for="" class="label">Password</label>
-              <div class="control has-icons-left">
-                <input type="password" placeholder="*******" class="input" required />
-                <span class="icon is-small is-left">
-                  <i class="fa fa-lock"></i>
+            <div className="field">
+              <label className="label">Password</label>
+              <div className="control has-icons-left">
+                <input onChange={(e) => this.setState({password:e.target.value})} type="password" placeholder="*******" className="input" required />
+                <span className="icon is-small is-left">
+                  <i className="fa fa-lock"></i>
                 </span>
               </div>
             </div>
-            <div class="field">
-              <button class="button is-success">
+            <div className="field">
+              <button className="button is-success">
                 Login
               </button>
             </div>
