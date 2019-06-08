@@ -2,24 +2,12 @@ import React, {Component} from 'react';
 import Dropzone from 'react-dropzone';
 
 
-export default class Uploadform extends Component{
-    constructor(props){
-        super(props);
-        this.state={
-            title:'',
-            description:'',
-            img:[]
-
-        }
-    }
-
-
-    render(){
-        console.log(this.state);
-        return(
-            <form action="/user/upload" method="post" encType="multipart/form-data">
-                <input placeholder="Write the title here" type="text" value={this.state.title} onChange={(e) => this.setState({title:e.target.value})}/>
-                <textarea onChange={(e) => this.setState({description:e.target.value})} value={this.state.description} placeholder="Write your post here"/>
+const Uploadform = () => {
+ 
+            return(
+            <form onSubmit={handleOnSubmit} action="/post/upload" method="post" encType="multipart/form-data">
+                <input placeholder="Write the title here" type="text" name="title" />
+                <textarea name="description"/>
                 <Dropzone>
             {({getRootProps, getInputProps, isDragActive, acceptedFiles}) => (
                 <section>
@@ -28,7 +16,7 @@ export default class Uploadform extends Component{
                     <div>{isDragActive ? <p>Drop it</p>: <p>Drop images</p>}</div>
                     <ul>
                     {acceptedFiles.length > 0 && acceptedFiles.map(acceptedFile => (
-                        <li className="file-item">
+                        <li key={acceptedFile.name} className="file-item">
                           {acceptedFile.name}
                         </li>
                       ))}
@@ -36,8 +24,13 @@ export default class Uploadform extends Component{
                 </div>
                 </section>
             )}
-        </Dropzone>
+                </Dropzone>
+                <button type="submit">Submit</button>
             </form>
         )
+
+        function handleOnSubmit(e){
+            e.preventDefault();
+        }
     }
-}
+export default Uploadform;

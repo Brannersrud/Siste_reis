@@ -1,11 +1,10 @@
-
 var express = require('express');
 var app = express();
 var mongoose = require('mongoose');
 var BodyParser = require('body-parser');
 
 
-
+app.use('/uploads', express.static('uploads'));
 app.use(express.static(__dirname+'/client/build'));
 app.use(BodyParser.json());
 app.use(function(req, res, next) {
@@ -21,7 +20,10 @@ mongoose.connect(url,parser)
 .then(() => console.log("db connected"))
 .catch((err) => console.log(err));
 
-
+var userRoutes = require('./actions/user_actions');
+var postRoutes = require('./actions/post_actions');
+app.use('/user/', userRoutes);
+app.use('/post/',postRoutes);
 
 app.use(function(req, res){
     res.sendStatus(404);
