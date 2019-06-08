@@ -14,9 +14,20 @@ app.use(function(req, res, next) {
     next();
   });
 // Connection URL
-const url = "mongodb+srv://sistereis:sistereis@cluster0-ea9b5.mongodb.net/test?retryWrites=true&w=majority"
+const url = 'mongodb+srv://sistereis:sistereis@cluster0-ea9b5.mongodb.net/test?retryWrites=true&w=majority';
 // Database Name
 const parser = { useNewUrlParser: true };
 mongoose.connect(url,parser)
 .then(() => console.log("db connected"))
 .catch((err) => console.log(err));
+
+
+
+app.use(function(req, res){
+    res.sendStatus(404);
+});
+   
+var server = app.listen(5000, function() {
+    var port = server.address().port;
+    console.log('Express server listening on port %s.', port);
+});
