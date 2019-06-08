@@ -1,26 +1,62 @@
-@import "~bulma/sass/utilities/initial-variables";
-
+$basepercent:16%;
+$basefontsize: 1.5em;
+$borderradius:4px;
 form{
+    width: 60%;
+    height:70%;
     display:flex;
     flex-direction: column;
-    max-width:30%;
-    height:200px;
     justify-content: space-between;
+    padding:16px 128px 32px 128px;
+}
+input{
+    height:64px;
+    width:50%;
+    font-size:$basefontsize;
+    border:1px solid white;
+    border-bottom:1px solid rgba(0, 0, 0, 0.5);
 }
 
 
+//dropzone
 .drop-wrapper{
-    border: 1px solid black;
+    border:1px solid black;
+    border-radius: $borderradius;
 }
-
-
+.file-item{
+    list-style-type: none;
+    border:1px solid black;
+    max-width:30%;
+    background-color:red;
+    padding:10px;
+    border-radius:$borderradius;
+    font-size:$basefontsize/1.5;
+    margin: 0.5em;
+}
+.file-list{
+    display:flex;
+    flex-direction: row;
+}
     //Loginform
 .hero.is-primary {
     background-color: white !important;
 }
+textarea{
+    height:10em;
+    width:80%;
+    font-size:$basefontsize;
+}
+button{
+    width:160px;
+    padding:18px;
+    margin-top:1.5em;
+    font-size:$basefontsize/1.2;
+}
+label{
+    font-size: $basefontsize;
+}
 
 
 
 
 
-@import "~bulma";

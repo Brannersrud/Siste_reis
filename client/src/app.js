@@ -1,16 +1,16 @@
 import React,{Component} from 'react';
 import FrontPage from './components/frontpage';
-import Uploadform from './components/uploadform';
 import Loginform from './components/Loginform';
 import Style from '../src/App.scss';
+import AppRouter from '../src/router';
 
 
 const App = () => {
     return(
-        <div>
-            <Uploadform/>
+        <AppRouter>
             <Loginform/>
-        </div>
+        </AppRouter>
+      
     )
 }
 
