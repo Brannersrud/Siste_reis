@@ -14,8 +14,13 @@ class Loginform extends Component {
     render(){
         return(
             <div>
-            
+            <div class="field">
+            <div class="control">
+                <input class="input" type="text" placeholder="Normal input" />
             </div>
+            </div>
+            </div>
+            
         )
     }
 }
