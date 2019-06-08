@@ -1,7 +1,11 @@
 form{
     display:flex;
     flex-direction: column;
+    max-width:30%;
+    height:200px;
+    justify-content: space-between;
 }
+
 
 .drop-wrapper{
     border: 1px solid black;

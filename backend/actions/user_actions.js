@@ -1,8 +1,11 @@
 var express = require('express');
 var router = express.Router();
 var userscheme = require('../models/user_model');
-const bcrypt = require('bcrypt');
+var bcrypt = require('bcrypt');
 var saltRounds = 15;
+
+
+
 
 
     router.post('/loginUser',function(req,res){
@@ -43,6 +46,7 @@ var saltRounds = 15;
     })
     
 });
+
     
 
 
