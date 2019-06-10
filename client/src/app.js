@@ -1,5 +1,4 @@
-import React,{Component} from 'react';
-import FrontPage from './components/frontpage';
+import React from 'react';
 import Loginform from './components/Loginform';
 import Style from '../src/App.scss';
 import AppRouter from '../src/router';
@@ -8,9 +7,9 @@ import AppRouter from '../src/router';
 
 const App = () => {
     return(
-        <div>
+        <AppRouter>
             <Loginform/>
-        </div>
+        </AppRouter>
     )
 }
 

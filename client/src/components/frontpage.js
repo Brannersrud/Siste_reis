@@ -1,24 +1,13 @@
-import React, {Component} from 'react';
+import React from 'react';
+import Postsection from './postsection';
 
-export default class FrontPage extends Component{
-    constructor(props){
-        super(props);
-        this.state={
-            data:[]
-        }
-    }
-    componentDidMount(){
-        fetch('/post/getAllPosts')
-        .then((res) => res.json())
-        .then((resdata) => console.log(resdata))
-        .catch((err) => console.log(err));
-    }  
- render(){
+const FrontPage= () => {
      return(
          <div>
-            <p>frontpage</p>
+            <Postsection/>
          </div>
      )
  }   
-}
+
+ export default FrontPage;
 
