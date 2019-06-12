@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import store from 'store';
 
 
 class Loginform extends Component {
@@ -7,12 +8,35 @@ class Loginform extends Component {
 
         this.state={
             'username': '',
-            'password': ''
+            'password': '',
+            'res':''
         }
     }
 
+    handleUserLogin(e){
+      e.preventDefault();
+      fetch("/user/loginUser", {
+        method:"POST",
+        headers:{
+            'content-type': 'application/json'
+        },
+        body:JSON.stringify(this.state)
+    })
+    .then((response) => response.json())
+    .then((result) => {
+      if(result.success){
+        store.set('username', result.username);
+        this.props.history.push('/adminview');
+      }else{
+        store.remove('username');
+        this.props.history.push('/404');
+      }
+
+    })
+      
+    }
+
     render(){
-        console.log(this.state);
         return(
             <div>
             <section className="hero is-primary is-fullheight" id="loginform">
@@ -40,7 +64,7 @@ class Loginform extends Component {
               </div>
             </div>
             <div className="field">
-              <button className="button is-success">
+              <button onClick={this.handleUserLogin.bind(this)} className="button is-success">
                 Login
               </button>
             </div>

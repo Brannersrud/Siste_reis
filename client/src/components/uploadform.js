@@ -1,9 +1,14 @@
-import React,{Component, Fragment} from 'react';
+import React, {Component} from 'react';
 import Dropzone from 'react-dropzone';
 
 
 
-const Uploadform = () =>  {
+class Uploadform extends Component  {
+    
+   componentWillReceiveProps(nextProps){
+       console.log(nextProps);
+   }
+    render(){
     return(
             <form action="/post/upload" method="post" encType="multipart/form-data">
                 <label>Title of post</label>
@@ -16,10 +21,10 @@ const Uploadform = () =>  {
                     <section>
                     <div className="drop-wrapper" {...getRootProps()}>
                         <input name="file" accept="image/*" className="drop-zone" {...getInputProps()} />
-                        <p>{isDragActive ? <p>Drop it</p>: <p>Drop images</p>}</p>
+                        {isDragActive ? <p>Drop it</p>: <p>Drop images</p>}
                         <ul className="file-list">
                         {acceptedFiles.length > 0 && acceptedFiles.map(acceptedFile => (
-                            <li className="file-item">
+                            <li key={acceptedFile.name} className="file-item">
                               {acceptedFile.name}
                             </li>
                           ))}
@@ -29,11 +34,12 @@ const Uploadform = () =>  {
                 )}
             </Dropzone>
                
-                <button type="submit">Submit</button>
+                <button onClick={(e) => e.preventDefault()} type="submit">Submit</button>
             </form>
         )
 
         
     }
+}
 
 export default Uploadform;
